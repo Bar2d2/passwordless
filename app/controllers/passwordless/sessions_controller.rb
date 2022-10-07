@@ -48,6 +48,7 @@ module Passwordless
       sign_in(passwordless_session)
 
       redirect_to(passwordless_success_redirect_path)
+      flash[:notice] = I18n.t(".passwordless.sessions.create.session_welcome")
     rescue Errors::TokenAlreadyClaimedError
       flash[:error] = I18n.t(".passwordless.sessions.create.token_claimed")
       redirect_to(passwordless_failure_redirect_path)
