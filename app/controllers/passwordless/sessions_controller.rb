@@ -64,7 +64,7 @@ module Passwordless
         redirect_to(passwordless_sign_out_redirect_path)
         flash[:notice] = I18n.t(".passwordless.sessions.destroy.signed_out_success")
       else
-        flash[:notice] = I18n.t(".passwordless.sessions.destroy.signed_out_fail")
+        flash[:alert] = I18n.t(".passwordless.sessions.destroy.signed_out_fail")
       end
     end
 
