@@ -30,7 +30,7 @@ module Passwordless
           Passwordless.after_session_save.call(session)
         end
 
-        render :create, status: :ok
+        render :create, status: :ok, flash: { notice: I18n.t(".passwordless.sessions.destroy.signed_out_success") }
       else
         render :create, status: :unprocessable_entity
       end
