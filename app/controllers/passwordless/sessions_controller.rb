@@ -62,9 +62,9 @@ module Passwordless
     def destroy
       if sign_out(authenticatable_class)
         redirect_to(passwordless_sign_out_redirect_path)
-        flash[:error] = I18n.t(".passwordless.sessions.destroy.signed_out_success")
+        flash[:notice] = I18n.t(".passwordless.sessions.destroy.signed_out_success")
       else
-        flash[:error] = I18n.t(".passwordless.sessions.destroy.signed_out_fail")
+        flash[:notice] = I18n.t(".passwordless.sessions.destroy.signed_out_fail")
       end
     end
 
